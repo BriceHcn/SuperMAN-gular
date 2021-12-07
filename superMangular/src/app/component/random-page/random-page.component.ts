@@ -23,4 +23,10 @@ export class RandomPageComponent implements OnInit {
   );
 
 }
+
+reload(): void{
+  // any other execution
+  this.ngOnInit()
+  }
+
 }
