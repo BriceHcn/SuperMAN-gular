@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { superhero } from 'src/app/data/superhero';
 import { Subscription } from 'rxjs';
 import { DataServiceService } from 'src/app/services/data-service.service';
+import { GameService } from 'src/app/services/game.service';
 
 @Component({
   selector: 'app-superherolist',
@@ -14,7 +15,9 @@ export class SuperherolistComponent implements OnInit {
   subscription!: Subscription;
   subscription2!: Subscription;
 
-  constructor(private DataService:DataServiceService) { }
+  score:number=0;
+
+  constructor(private DataService:DataServiceService,private GameService:GameService) { }
 
   ngOnInit(): void {
     this.subscription = this.DataService.getSuperhero().subscribe(
@@ -29,6 +32,20 @@ export class SuperherolistComponent implements OnInit {
       this.myHero2 = data2; }
 );
 
+
+  }
+  actionLeft(){
+    console.log("les deux super etait "+this.myHero1.name +" & "+this.myHero2.name);
+    console.log("jai choisi le super gauche : "+this.myHero1.name);
+    this.score=this.GameService.compareHero(this.myHero2,this.myHero1,1);
+
+    this.ngOnInit();
   }
 
+  actionRight(){
+    console.log("les deux super etait "+this.myHero2.name +" & "+this.myHero2.name);
+    console.log("jai choisi le super droite : "+this.myHero2.name);
+    this.score=this.GameService.compareHero(this.myHero1,this.myHero2,1);
+    this.ngOnInit();
+  }
 }
