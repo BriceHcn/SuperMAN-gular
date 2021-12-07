@@ -19,8 +19,8 @@ export class DataServiceService {
 
 
   getSuperhero(): Observable<superhero> {
-    delay(100);
-    return this.http.get<superhero>(this.baseUrl + this.getRandomArbitrary(1,731).toString());
+    return this.http.get<superhero>(this.baseUrl + this.getRandomArbitrary(1,731).toString()).pipe(
+      delay(2000));
   }
 
   getRandomArbitrary(min:number, max:number) {

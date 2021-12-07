@@ -23,19 +23,15 @@ export class SuperherolistComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscription = this.DataService.getSuperhero().subscribe(
-      (data1:superhero) =>{
-        this.myHero1 = data1;
-        this.hideMe=true;}
+      (data1:superhero) =>{this.myHero1 = data1;}
       ,(error) => {console.log("error");}
-      ,() => {console.log("bravo");}
+      ,() => {this.hideMe=true;}
     );
 
     this.subscription2 = this.DataService.getSuperhero().subscribe(
-      (data2:superhero) =>{
-
-        this.myHero2 = data2;}
+      (data2:superhero) =>{this.myHero2 = data2;}
       ,(error) => {console.log("error");}
-      ,() => {console.log("bravo");}
+      ,() => {this.hideMe=true;}
     );
 
     this.GameService.scoreObs.subscribe((value: number) => {
