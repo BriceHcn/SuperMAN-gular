@@ -49,8 +49,7 @@ export class SuperherolistComponent implements OnInit {
 
       this.subscription = this.DataService.getSuperhero().subscribe(
         (data1:superhero) =>{
-          this.myHero1 = data1;
-          this.hideMe=true;}
+          this.myHero1 = data1;}
         ,(error) => {console.log("error");}
         ,() => {console.log("bravo");}
       );
