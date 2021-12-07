@@ -1,10 +1,10 @@
-.sidebyside{
-  display:flex;
-  flex-direction: row;
-
-
+.sidebyside {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2%;
+    justify-content: space-around;
 }
 
-.herobg{
-  margin-left: 10%;
+.herobg {
+    margin-left: 0%;
 }
