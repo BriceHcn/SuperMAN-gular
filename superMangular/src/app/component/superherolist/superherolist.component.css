@@ -1,0 +1,10 @@
+.sidebyside{
+  display:flex;
+  flex-direction: row;
+
+
+}
+
+.herobg{
+  margin-left: 10%;
+}
