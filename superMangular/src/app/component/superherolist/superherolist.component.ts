@@ -13,6 +13,7 @@ export class SuperherolistComponent implements OnInit {
   myHero2!:superhero;
   subscription!: Subscription;
   subscription2!: Subscription;
+  hideMe:boolean = false;
 
   constructor(private DataService:DataServiceService) { }
 
