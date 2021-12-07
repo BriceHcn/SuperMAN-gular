@@ -30,7 +30,37 @@ reload(): void{
   // any other execution
   this.ngOnInit()
 
-  switch()
+  this.random_var = this.DataService.getRandomArbitrary(1,6);
+
+  switch(this.random_var){
+    case 1 :
+      this.text_var = "intelligent";
+      break;
+
+    case 2 :
+      this.text_var = "fort";
+      break;
+
+    case 3 :
+      this.text_var = "rapide";
+      break;
+
+    case 4 :
+      this.text_var = "endurant";
+      break;
+
+    case 5 :
+      this.text_var = "puissant";
+      break;
+
+    case 6 :
+      this.text_var = "technique";
+      break;
+
+    default :
+      this.text_var = "ERROR";
+      break;
+  }
 
   }
 
