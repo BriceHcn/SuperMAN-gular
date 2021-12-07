@@ -1,4 +1,9 @@
+import { appearance } from "./appearance";
+import { biography } from "./biography";
+import { connections } from "./connections";
+import { image } from "./image";
 import { powerstats } from "./powerstats";
+import { work } from "./work";
 
 export class superhero {
 
