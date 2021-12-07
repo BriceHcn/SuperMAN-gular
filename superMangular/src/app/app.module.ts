@@ -8,13 +8,17 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { SuperheroComponent } from './component/superhero/superhero.component';
 import { InterceptorService } from './services/interceptor.service';
+import { GamePageComponent } from './component/game-page/game-page.component';
+import { RandomPageComponent } from './component/random-page/random-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SuperheroComponent
+    SuperheroComponent,
+    GamePageComponent,
+    RandomPageComponent
   ],
   imports: [
     BrowserModule,

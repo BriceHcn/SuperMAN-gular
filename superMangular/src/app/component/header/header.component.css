@@ -1,3 +1,9 @@
 .header {
   background-color:lightsteelblue;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+  padding-right: 30px;
+}
