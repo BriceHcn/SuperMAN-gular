@@ -22,10 +22,11 @@ export class DataServiceService {
 
 
   getSuperhero(): Observable<superhero> {
-    return this.http.get<superhero>(this.baseUrl + getRandomArbitrary(1,731).toString());
+    return this.http.get<superhero>(this.baseUrl + this.getRandomArbitrary(1,731).toString());
+  }
+
+  getRandomArbitrary(min:number, max:number) {
+    return Math.round(Math.random() * (max - min) + min);
   }
 }
 
-function getRandomArbitrary(min:number, max:number) {
-  return Math.round(Math.random() * (max - min) + min);
-}

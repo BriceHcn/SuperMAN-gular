@@ -14,6 +14,7 @@ export class SuperherolistComponent implements OnInit {
   myHero2!:superhero;
   subscription!: Subscription;
   subscription2!: Subscription;
+  hideMe:boolean = false;
 
   score:number=0;
 
