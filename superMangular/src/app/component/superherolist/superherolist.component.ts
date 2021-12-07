@@ -3,6 +3,7 @@ import { superhero } from 'src/app/data/superhero';
 import { Subscription } from 'rxjs';
 import { DataServiceService } from 'src/app/services/data-service.service';
 import { GameService } from 'src/app/services/game.service';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-superherolist',
@@ -24,13 +25,18 @@ export class SuperherolistComponent implements OnInit {
     this.subscription = this.DataService.getSuperhero().subscribe(
 
       (data1:superhero) =>{
-        this.myHero1 = data1; }
+        this.myHero1 = data1;
+        this.hideMe=true;}
+      ,(error) => {console.log("error");}
+      ,() => {console.log("bravo");}
   );
 
   this.subscription2 = this.DataService.getSuperhero().subscribe(
 
     (data2:superhero) =>{
-      this.myHero2 = data2; }
+      this.myHero2 = data2;}
+    ,(error) => {console.log("error");}
+    ,() => {console.log("bravo");}
 );
 
 
