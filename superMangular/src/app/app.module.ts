@@ -13,6 +13,7 @@ import { RandomPageComponent } from './component/random-page/random-page.compone
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SuperherolistComponent } from './component/superherolist/superherolist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchPageComponent } from './component/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SuperheroComponent,
     GamePageComponent,
     RandomPageComponent,
-    SuperherolistComponent
+    SuperherolistComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
