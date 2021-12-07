@@ -1,3 +1,4 @@
+import { powerstats } from "./powerstats";
 
 export class superhero {
 
