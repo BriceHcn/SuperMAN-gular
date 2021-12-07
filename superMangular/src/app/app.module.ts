@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { SuperheroComponent } from './component/superhero/superhero.component';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
