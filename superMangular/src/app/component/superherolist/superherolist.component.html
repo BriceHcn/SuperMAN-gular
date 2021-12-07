@@ -1,5 +1,8 @@
+<p>Qui c'est qui le plus fort là ???</p>
 <div [ngClass]="['sidebyside']">
 <app-superhero [ngClass]="['herobg']" [myHero]="myHero1"></app-superhero>
+<button mat-flat-button color="accent" >{{myHero1.name}}</button>
 
 <app-superhero [ngClass]="['herobg']" [myHero]="myHero2"></app-superhero>
+<button mat-flat-button color="accent" >{{myHero2.name}}</button>
 </div>
