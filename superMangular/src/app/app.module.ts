@@ -10,6 +10,7 @@ import { SuperheroComponent } from './component/superhero/superhero.component';
 import { InterceptorService } from './services/interceptor.service';
 import { GamePageComponent } from './component/game-page/game-page.component';
 import { RandomPageComponent } from './component/random-page/random-page.component';
+import { SuperherolistComponent } from './component/superherolist/superherolist.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RandomPageComponent } from './component/random-page/random-page.compone
     FooterComponent,
     SuperheroComponent,
     GamePageComponent,
-    RandomPageComponent
+    RandomPageComponent,
+    SuperherolistComponent
   ],
   imports: [
     BrowserModule,

@@ -12,10 +12,20 @@ export class DataServiceService {
   //baseUrl: string = environment.baseUrl;
   baseUrl: string = "/api/1747455068784069/";
 
+  myHero1!:Observable<superhero>;
+  myHero2!:Observable<superhero>;
+
   constructor( private http: HttpClient) { }
 
 
-  getSuperhero(id:number): Observable<superhero> {
-    return this.http.get<superhero>(this.baseUrl + "201");
+
+
+
+  getSuperhero(): Observable<superhero> {
+    return this.http.get<superhero>(this.baseUrl + getRandomArbitrary(1,731).toString());
   }
+}
+
+function getRandomArbitrary(min:number, max:number) {
+  return Math.round(Math.random() * (max - min) + min);
 }
