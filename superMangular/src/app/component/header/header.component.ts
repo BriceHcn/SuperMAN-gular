@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.myLogo = '../assets/SuperMANgular_logo.png';
+    this.myLogo = '../assets/SuperMAngular.png';
   }
 
 }
