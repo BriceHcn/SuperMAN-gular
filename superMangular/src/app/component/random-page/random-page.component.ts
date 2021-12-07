@@ -11,6 +11,8 @@ import { DataServiceService } from 'src/app/services/data-service.service';
 export class RandomPageComponent implements OnInit {
   myHeroRand!:superhero;
   subscription!: Subscription;
+  random_var!: number;
+  text_var!:string;
 
   constructor(private DataService:DataServiceService) { }
 
@@ -27,6 +29,9 @@ export class RandomPageComponent implements OnInit {
 reload(): void{
   // any other execution
   this.ngOnInit()
+
+  switch()
+
   }
 
 }
