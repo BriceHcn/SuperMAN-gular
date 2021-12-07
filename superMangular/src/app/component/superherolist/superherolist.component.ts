@@ -22,31 +22,36 @@ export class SuperherolistComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscription = this.DataService.getSuperhero().subscribe(
-
       (data1:superhero) =>{
         this.myHero1 = data1; }
   );
 
   this.subscription2 = this.DataService.getSuperhero().subscribe(
-
     (data2:superhero) =>{
       this.myHero2 = data2; }
-);
+  );
+
+  this.GameService.scoreObs.subscribe((value: number) => this.score=value);
 
 
   }
   actionLeft(){
     console.log("les deux super etait "+this.myHero1.name +" & "+this.myHero2.name);
     console.log("jai choisi le super gauche : "+this.myHero1.name);
-    this.score=this.GameService.compareHero(this.myHero2,this.myHero1,1);
-
+    this.GameService.compareHero(this.myHero2,this.myHero1,1);
     this.ngOnInit();
   }
 
   actionRight(){
     console.log("les deux super etait "+this.myHero2.name +" & "+this.myHero2.name);
     console.log("jai choisi le super droite : "+this.myHero2.name);
-    this.score=this.GameService.compareHero(this.myHero1,this.myHero2,1);
+    this.GameService.compareHero(this.myHero1,this.myHero2,1);
     this.ngOnInit();
+  }
+
+  NgOnDestroy(){
+    //this.subscription.unsubscribe();
+    //this.subscription2.unsubscribe();
+    //this.GameService.scoreObs.unsubscribe();
   }
 }

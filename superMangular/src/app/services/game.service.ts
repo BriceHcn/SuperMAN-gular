@@ -1,18 +1,36 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { superhero } from '../data/superhero';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
-  score:number=1;
+  score:number=0;
+  scoreObs = new BehaviorSubject<number>(0);
   constructor() { }
 
-  compareHero(heroNotChoose:superhero,heroChoose:superhero,carac2comp:number):number{
+  getScore(){
+    return this.scoreObs.asObservable();
+ }
+
+  compareHero(heroNotChoose:superhero,heroChoose:superhero,carac2comp:number){
+    if(heroNotChoose.powerstats.strength===null){
+      this.score++;
+      this.scoreObs.next(this.score);
+      return;
+    }else if(heroChoose.powerstats.strength===null){
+      this.score++;
+      this.scoreObs.next(this.score);
+      return;
+    }
+
     if(heroChoose.powerstats.strength>=heroNotChoose.powerstats.strength){
-      return this.score++;
+      this.score++;
+      this.scoreObs.next(this.score);
     }else{
-      return this.score--;
+      this.score;
+      this.scoreObs.next(this.score);
     }
 
   }
