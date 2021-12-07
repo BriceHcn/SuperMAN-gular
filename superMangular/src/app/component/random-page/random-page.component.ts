@@ -35,26 +35,32 @@ reload(): void{
   switch(this.random_var){
     case 1 :
       this.text_var = "intelligent";
+      console.log(this.myHeroRand.powerstats.intelligence);
       break;
 
     case 2 :
       this.text_var = "fort";
+      console.log(this.myHeroRand.powerstats.strength);
       break;
 
     case 3 :
       this.text_var = "rapide";
+      console.log(this.myHeroRand.powerstats.speed);
       break;
 
     case 4 :
       this.text_var = "endurant";
+      console.log(this.myHeroRand.powerstats.durability);
       break;
 
     case 5 :
       this.text_var = "puissant";
+      console.log(this.myHeroRand.powerstats.power);
       break;
 
     case 6 :
       this.text_var = "technique";
+      console.log(this.myHeroRand.powerstats.combat);
       break;
 
     default :
