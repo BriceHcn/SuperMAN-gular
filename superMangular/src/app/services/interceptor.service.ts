@@ -14,7 +14,8 @@ export class InterceptorService implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-            const clone = req.clone({ setHeaders: { 'Access-Control-Allow-Origin':'*' }});
+            /* const clone = req.clone({ setHeaders: { 'Access-Control-Allow-Origin':'*' }});*/
+            const clone = req.clone();
             return next.handle(clone);
   }
 }

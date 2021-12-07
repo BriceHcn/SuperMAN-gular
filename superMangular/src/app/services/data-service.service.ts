@@ -10,13 +10,8 @@ import { Observable, of } from 'rxjs';
 })
 export class DataServiceService {
   //baseUrl: string = environment.baseUrl;
-  baseUrl: string = "https://superheroapi.com/api/1747455068784069/";
+  baseUrl: string = "/api/1747455068784069/";
 
-  optionRequete = {
-    headers: new HttpHeaders({
-      'Access-Control-Allow-Origin':'*'
-    })
-  };
   constructor( private http: HttpClient) { }
 
 
