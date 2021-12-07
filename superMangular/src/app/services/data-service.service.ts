@@ -18,10 +18,8 @@ export class DataServiceService {
   constructor( private http: HttpClient) { }
 
 
-
-
-
   getSuperhero(): Observable<superhero> {
+    delay(100);
     return this.http.get<superhero>(this.baseUrl + this.getRandomArbitrary(1,731).toString());
   }
 
