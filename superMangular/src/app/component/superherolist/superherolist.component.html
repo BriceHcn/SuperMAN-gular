@@ -1,7 +1,10 @@
 <p>le score est de : {{score}}</p>
-<p>Qui c'est qui le plus fort là ???</p>
 
-<mat-spinner  diameter="500" mode="indeterminate" [hidden]="hideMe"></mat-spinner>
+<mat-spinner diameter="500" mode="indeterminate" [hidden]="hideMe"></mat-spinner>
+<img [src]="mySpinner" width="150px" [hidden]="hideMe" />
+
+<p [hidden]="!hideMe">Qui c'est qui le plus fort là ???</p>
+
 <div [ngClass]="['sidebyside']" [hidden]="!hideMe">
     <app-superhero [ngClass]="['herobg']" [myHero]="myHero1"></app-superhero>
     <button mat-flat-button color="accent" (click)="actionLeft()">{{myHero1.name}}</button>
