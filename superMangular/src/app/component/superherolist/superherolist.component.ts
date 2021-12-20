@@ -35,7 +35,7 @@ export class SuperherolistComponent implements OnInit {
     );
 
     this.GameService.scoreObs.subscribe((value: number) => {
-      console.log("caca");
+      console.log(value);
 
       this.score=value;
 
@@ -60,15 +60,15 @@ export class SuperherolistComponent implements OnInit {
   }
 
   actionLeft(){
-    console.log("les deux super etait "+this.myHero1.name +" & "+this.myHero2.name);
-    console.log("jai choisi le super gauche : "+this.myHero1.name);
+    //console.log("les deux super etait "+this.myHero1.name +" & "+this.myHero2.name);
+    //console.log("jai choisi le super gauche : "+this.myHero1.name);
     this.GameService.compareHero(this.myHero2,this.myHero1,1);
 
   }
 
   actionRight(){
-    console.log("les deux super etait "+this.myHero2.name +" & "+this.myHero2.name);
-    console.log("jai choisi le super droite : "+this.myHero2.name);
+    //console.log("les deux super etait "+this.myHero1.name +" & "+this.myHero2.name);
+    //console.log("jai choisi le super droite : "+this.myHero2.name);
     this.GameService.compareHero(this.myHero1,this.myHero2,1);
 
   }

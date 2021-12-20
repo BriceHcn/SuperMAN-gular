@@ -1,3 +1,4 @@
+import { isNull } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { superhero } from '../data/superhero';
@@ -15,23 +16,22 @@ export class GameService {
  }
 
   compareHero(heroNotChoose:superhero,heroChoose:superhero,carac2comp:number){
-    if(heroNotChoose.powerstats.strength===null){
-      this.score++;
-      this.scoreObs.next(this.score);
-      return;
-    }else if(heroChoose.powerstats.strength===null){
-      this.score++;
+    if(String(heroNotChoose.powerstats.strength)=="null" || String(heroChoose.powerstats.strength)=="null"){
+      ++this.score;
       this.scoreObs.next(this.score);
       return;
     }
-
-    if(heroChoose.powerstats.strength>=heroNotChoose.powerstats.strength){
-      this.score++;
+    else{
+    if(Number(heroChoose.powerstats.strength)>=Number(heroNotChoose.powerstats.strength)){
+      ++this.score;
       this.scoreObs.next(this.score);
     }else{
-      this.score;
+      //--this.score;
       this.scoreObs.next(this.score);
     }
-
   }
+
+}
+
+
 }
