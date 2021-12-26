@@ -3,7 +3,7 @@
 <mat-spinner diameter="500" mode="indeterminate" [hidden]="hideMe"></mat-spinner>
 <img [src]="mySpinner" width="150px" [hidden]="hideMe" />
 
-<p [hidden]="!hideMe">Qui c'est qui le plus fort là ???</p>
+<p [hidden]="!hideMe">{{question}}</p>
 
 <div [ngClass]="['sidebyside']" [hidden]="!hideMe">
     <app-superhero [ngClass]="['herobg']" [myHero]="myHero1"></app-superhero>

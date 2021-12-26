@@ -12,51 +12,49 @@ import { GameService } from 'src/app/services/game.service';
 export class SuperherolistComponent implements OnInit {
   myHero1!:superhero;
   myHero2!:superhero;
+
   subscription!: Subscription;
   subscription2!: Subscription;
+
   hideMe!:boolean;
   mySpinner!:string;
-
   score:number=0;
+  question!:string;
 
   constructor(private DataService:DataServiceService,private GameService:GameService) { }
 
   ngOnInit(): void {
     this.mySpinner='../assets/spinner.gif';
     this.hideMe=false;
-    //this.refresh();
 
     this.GameService.scoreObs.subscribe((value: number) => {
-      //console.log(value);
       this.score=value;
       this.refresh();
-
-
     }
     );
   }
 
+  //quand on clique sur le bouton de gauche
   actionLeft(){
-    //console.log("les deux super etait "+this.myHero1.name +" & "+this.myHero2.name);
-    //console.log("jai choisi le super gauche : "+this.myHero1.name);
-    this.GameService.compareHero(this.myHero2,this.myHero1,1);
-
+    //on compare les deux heros selon la caracteridtique choisie au hasard
+    this.GameService.compareHero(this.myHero2,this.myHero1,this.GameService.comp);
   }
 
+  //et quand on clique sur le bouton de droite
   actionRight(){
-    //console.log("les deux super etait "+this.myHero1.name +" & "+this.myHero2.name);
-    //console.log("jai choisi le super droite : "+this.myHero2.name);
-    this.GameService.compareHero(this.myHero1,this.myHero2,1);
-
+    //on compare mais en inversant les deux supers
+    this.GameService.compareHero(this.myHero1,this.myHero2,this.GameService.comp);
   }
 
-  NgOnDestroy(){
-    //this.subscription.unsubscribe();
-    //this.subscription2.unsubscribe();
-    //this.GameService.scoreObs.unsubscribe();
-  }
-
+  //fonction appeller après chaque tour pour mettre a jours les super hero et la question
   refresh(){
+    //on choisi quelle caracteristique des supers on va comparer
+    this.GameService.setCharacToComp();
+
+    //on met a jour la question du jeux selon cet characteristique
+    this.question="Qui est le plus "+this.GameService.updateQuestion()+" ???";
+
+    //on met a jour nos deux super hero et le spinner
     this.subscription = this.DataService.getSuperhero().subscribe(
       (data1:superhero) =>{
         this.myHero1 = data1;
@@ -78,5 +76,11 @@ export class SuperherolistComponent implements OnInit {
         this.hideMe=true;
       }
     );
+  }
+
+  NgOnDestroy(){
+    this.subscription.unsubscribe();
+    this.subscription2.unsubscribe();
+    this.GameService.scoreObs.unsubscribe();
   }
 }

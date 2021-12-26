@@ -2,5 +2,6 @@
 <p>real name : {{myHero.biography['full-name']}}</p>
 <p>height : {{myHero.appearance.height[1]}}</p>
 <p>weight : {{myHero.appearance.weight[1]}}</p>
-<p>strength : {{myHero.powerstats.strength}}</p>
+<!-- commenter cette ligne pour prod -->
+<p>powerstat : {{ myjson.stringify(myHero.powerstats,null,4)}}</p>
 <img src={{myHero.image.url}} />
