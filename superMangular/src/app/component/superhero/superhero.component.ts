@@ -8,15 +8,9 @@ import { superhero } from 'src/app/data/superhero';
 })
 export class SuperheroComponent implements OnInit {
 @Input() myHero!:superhero;
-
 myjson:any=JSON;
 
+constructor() { }
 
-  constructor() { }
-
- ngOnInit(): void {
-
-
-  }
-
+ ngOnInit(): void {}
 }

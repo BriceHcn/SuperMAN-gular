@@ -4,4 +4,4 @@
 <p>weight : {{myHero.appearance.weight[1]}}</p>
 <!-- commenter cette ligne pour prod -->
 <p>powerstat : {{ myjson.stringify(myHero.powerstats,null,4)}}</p>
-<img src={{myHero.image.url}} />
+<img src={{myHero.image.url}} (error)="myHero.image.url='./assets/default.jpg'" />
