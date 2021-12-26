@@ -18,6 +18,7 @@ export class SuperherolistComponent implements OnInit {
 
   hideMe!:boolean;
   mySpinner!:string;
+
   score:number=0;
   question!:string;
 
