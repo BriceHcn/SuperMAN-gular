@@ -33,7 +33,19 @@ export class SuperherolistComponent implements OnInit {
       this.refresh();
     }
     );
+
   }
+
+  //fonction qui recupere le resultat de l'event emitter du bouton super hero
+getHeroChoice(evt:number){
+  console.log(evt);
+  if(evt==0){
+    this.actionLeft();
+  }
+  else if(evt==1){
+    this.actionRight();
+  }
+}
 
   //quand on clique sur le bouton de gauche
   actionLeft(){

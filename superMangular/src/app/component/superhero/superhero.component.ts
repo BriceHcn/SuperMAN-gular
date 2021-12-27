@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { superhero } from 'src/app/data/superhero';
 import { environment } from '../../../environments/environment';
 
@@ -11,7 +11,13 @@ export class SuperheroComponent implements OnInit {
 @Input() myHero!:superhero;
 myjson:any=JSON;
 env = environment;
+@Output() HeroRequest= new EventEmitter<String>();
+
 constructor() { }
 
  ngOnInit(): void {}
+
+ talkBack(name:string){
+  this.HeroRequest.emit(name);
+ }
 }

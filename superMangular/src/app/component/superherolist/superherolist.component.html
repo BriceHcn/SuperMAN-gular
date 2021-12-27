@@ -6,9 +6,7 @@
 <p [hidden]="!hideMe">{{question}}</p>
 
 <div [ngClass]="['sidebyside']" [hidden]="!hideMe">
-    <app-superhero [ngClass]="['herobg']" [myHero]="myHero1"></app-superhero>
-    <button mat-flat-button color="accent" (click)="actionLeft()">{{myHero1.name}}</button>
+    <app-superhero [ngClass]="['herobg']" [myHero]="myHero1" (HeroRequest)="getHeroChoice(0)"></app-superhero>
 
-    <app-superhero [ngClass]="['herobg']" [myHero]="myHero2"></app-superhero>
-    <button mat-flat-button color="accent" (click)="actionRight()">{{myHero2.name}}</button>
+    <app-superhero [ngClass]="['herobg']" [myHero]="myHero2" (HeroRequest)="getHeroChoice(1)"></app-superhero>
 </div>

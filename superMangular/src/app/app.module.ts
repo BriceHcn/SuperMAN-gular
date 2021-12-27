@@ -10,7 +10,9 @@ import { SuperheroComponent } from './component/superhero/superhero.component';
 import { InterceptorService } from './services/interceptor.service';
 import { GamePageComponent } from './component/game-page/game-page.component';
 import { RandomPageComponent } from './component/random-page/random-page.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 import { SuperherolistComponent } from './component/superherolist/superherolist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPageComponent } from './component/search-page/search-page.component';
@@ -32,6 +34,8 @@ import { SearchPageComponent } from './component/search-page/search-page.compone
     HttpClientModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
