@@ -1,5 +1,5 @@
-<img [src]="mySpinner" width="150px" [hidden]="hideMe" />
-<div [hidden]="!hideMe">
-    <app-superhero [ngClass]="['herobg']" [myHero]="myHeroRand"></app-superhero>
+<mat-spinner diameter="200" mode="indeterminate" color="accent" [hidden]="hideMe"></mat-spinner>
+<div [hidden]="!hideMe" id="random">
+    <app-superhero [ngClass]="['herobg']" [myHero]="myHeroRand" [showButton]="false"></app-superhero>
     <button (click)='reload()' class="btn btn-secondary">Change hero</button>
 </div>

@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment';
 })
 export class SuperheroComponent implements OnInit {
 @Input() myHero!:superhero;
+@Input() showButton!:boolean;
 myjson:any=JSON;
 env = environment;
 @Output() HeroRequest= new EventEmitter<String>();

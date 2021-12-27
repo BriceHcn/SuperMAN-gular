@@ -25,7 +25,6 @@ export class SuperherolistComponent implements OnInit {
   constructor(private DataService:DataService,private GameService:GameService) { }
 
   ngOnInit(): void {
-    this.mySpinner='../assets/spinner.gif';
     this.hideMe=false;
 
     this.GameService.scoreObs.subscribe((value: number) => {
@@ -37,15 +36,14 @@ export class SuperherolistComponent implements OnInit {
   }
 
   //fonction qui recupere le resultat de l'event emitter du bouton super hero
-getHeroChoice(evt:number){
-  console.log(evt);
-  if(evt==0){
-    this.actionLeft();
+  getHeroChoice(evt:number){
+    if(evt==0){
+      this.actionLeft();
+    }
+    else if(evt==1){
+      this.actionRight();
+    }
   }
-  else if(evt==1){
-    this.actionRight();
-  }
-}
 
   //quand on clique sur le bouton de gauche
   actionLeft(){

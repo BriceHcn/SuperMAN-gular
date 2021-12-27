@@ -1,13 +1,4 @@
-<!--
-<p>nom : {{myHero.name}}</p>
-<p>real name : {{myHero.biography['full-name']}}</p>
-<p>height : {{myHero.appearance.height[1]}}</p>
-<p>weight : {{myHero.appearance.weight[1]}}</p>
-<p *ngIf="env.production">powerstat : {{ myjson.stringify(myHero.powerstats,null,4)}}</p>
-<img src={{myHero.image.url}} (error)="myHero.image.url='./assets/default.jpg'" />
--->
-
-<mat-card class="example-card">
+<mat-card class="hero-card">
     <mat-card-header>
         <mat-card-title>{{myHero.name}}</mat-card-title>
     </mat-card-header>
@@ -19,7 +10,7 @@
         <p *ngIf="!env.production">powerstat : {{ myjson.stringify(myHero.powerstats,null,4)}}</p>
     </mat-card-content>
 
-    <mat-card-actions>
+    <mat-card-actions *ngIf="showButton">
         <button mat-raised-button color="accent" (click)="talkBack(myHero.name)">{{myHero.name}}</button>
     </mat-card-actions>
 </mat-card>
