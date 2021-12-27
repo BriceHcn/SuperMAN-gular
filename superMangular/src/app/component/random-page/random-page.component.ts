@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { superhero } from 'src/app/data/superhero';
-import { DataServiceService } from 'src/app/services/data-service.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-random-page',
@@ -14,7 +14,7 @@ export class RandomPageComponent implements OnInit {
 
   hideMe!:boolean;
   mySpinner!:string;
-  constructor(private DataService:DataServiceService) { }
+  constructor(private DataService:DataService) { }
 
 
   ngOnInit(): void {

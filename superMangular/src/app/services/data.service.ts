@@ -8,7 +8,7 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DataServiceService {
+export class DataService {
   //baseUrl: string = environment.baseUrl;
   baseUrl: string = "/api/1747455068784069/";
 

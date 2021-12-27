@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { superhero } from '../data/superhero';
-import { DataServiceService } from './data-service.service';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class GameService {
   scoreObs = new BehaviorSubject<number>(0);
   comp:number=0;
 
-  constructor(private DataService:DataServiceService) { }
+  constructor(private DataService:DataService) { }
 
   setCharacToComp(){
     this.comp=this.DataService.getRandomArbitrary(1,6);

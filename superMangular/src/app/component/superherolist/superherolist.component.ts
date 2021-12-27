@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { superhero } from 'src/app/data/superhero';
 import { Subscription } from 'rxjs';
-import { DataServiceService } from 'src/app/services/data-service.service';
+import { DataService } from 'src/app/services/data.service';
 import { GameService } from 'src/app/services/game.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class SuperherolistComponent implements OnInit {
   score:number=0;
   question!:string;
 
-  constructor(private DataService:DataServiceService,private GameService:GameService) { }
+  constructor(private DataService:DataService,private GameService:GameService) { }
 
   ngOnInit(): void {
     this.mySpinner='../assets/spinner.gif';
