@@ -9,8 +9,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  //baseUrl: string = environment.baseUrl;
-  baseUrl: string = "/api/1747455068784069/";
+  baseUrl: string = environment.baseUrl;
 
   myHero1!:Observable<superhero>;
   myHero2!:Observable<superhero>;
@@ -20,7 +19,7 @@ export class DataService {
 
   getSuperhero(): Observable<superhero> {
     return this.http.get<superhero>(this.baseUrl + this.getRandomArbitrary(1,731).toString()).pipe(
-      delay(2000));
+      delay(environment.delay));
   }
 
   getRandomArbitrary(min:number, max:number) {
