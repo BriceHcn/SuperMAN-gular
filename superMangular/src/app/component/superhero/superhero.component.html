@@ -1,8 +1,8 @@
-<mat-card class="hero-card">
+<mat-card class="hero-card" class="center">
     <mat-card-header>
         <mat-card-title>{{myHero.name}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image style="width: 300px; padding: 10px;" src={{myHero.image.url}} (error)="myHero.image.url='./assets/default.jpg'" alt="Angular Logo">
+    <img mat-card-image style="width: 300px; padding: 10px;" src={{myHero.image.url}} (error)="myHero.image.url='./assets/default.jpg'" alt="superhero" [title]="myHero.name">
     <mat-card-content>
         <p>real name : {{myHero.biography['full-name']}}</p>
         <p>height : {{myHero.appearance.height[1]}}</p>
