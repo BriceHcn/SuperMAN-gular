@@ -2,9 +2,29 @@
     display: flex;
     flex-direction: row;
     padding-bottom: 2%;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .herobg {
     margin-left: 0%;
+}
+
+mat-spinner {
+    margin: 0 auto;
+}
+
+.heros-container {
+    text-align: center;
+}
+
+#question {
+    font: small-caps bold 24px/1 sans-serif;
+}
+
+#score {
+    margin-top: 10px;
+    color: rgb(206, 206, 0);
+    font-weight: bold;
+    font-size: 300%;
+    font-family: sans-serif;
 }

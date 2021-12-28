@@ -12,13 +12,13 @@ export class SuperheroComponent implements OnInit {
 @Input() showButton!:boolean;
 myjson:any=JSON;
 env = environment;
-@Output() HeroRequest= new EventEmitter<String>();
+@Output() HeroRequest= new EventEmitter<any>();
 
 constructor() { }
 
  ngOnInit(): void {}
 
- talkBack(name:string){
-  this.HeroRequest.emit(name);
+ talkBack(){
+  this.HeroRequest.emit();
  }
 }

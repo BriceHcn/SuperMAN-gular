@@ -63,7 +63,7 @@ export class SuperherolistComponent implements OnInit {
     this.GameService.setCharacToComp();
 
     //on met a jour la question du jeux selon cet characteristique
-    this.question="Qui est le plus "+this.GameService.updateQuestion()+" ???";
+    this.question="Qui est le plus "+this.GameService.updateQuestion();
 
     //on met a jour nos deux super hero et le spinner
     this.subscription = this.DataService.getSuperhero().subscribe(

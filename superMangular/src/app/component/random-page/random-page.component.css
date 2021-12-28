@@ -1,4 +1,7 @@
 #random {
-    width: 300px;
+    margin: 0 auto;
+}
+
+mat-spinner {
     margin: 0 auto;
 }

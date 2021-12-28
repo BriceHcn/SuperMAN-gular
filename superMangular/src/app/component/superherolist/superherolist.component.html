@@ -1,11 +1,13 @@
-<p>le score est de : {{score}}</p>
+<div class="heros-container">
+    <p id="score">{{score}} points </p>
 
-<mat-spinner diameter="200" color="accent" mode="indeterminate" [hidden]="hideMe"></mat-spinner>
+    <mat-spinner diameter="200" color="accent" mode="indeterminate" [hidden]="hideMe"></mat-spinner>
 
-<p [hidden]="!hideMe">{{question}}</p>
+    <p id="question" [hidden]="!hideMe">{{question}} ?</p>
 
-<div [ngClass]="['sidebyside']" [hidden]="!hideMe">
-    <app-superhero [ngClass]="['herobg']" [myHero]="myHero1" (HeroRequest)="getHeroChoice(0)" [showButton]="true"></app-superhero>
+    <div [ngClass]="['sidebyside']" [hidden]="!hideMe">
+        <app-superhero [ngClass]="['herobg']" [myHero]="myHero1" (HeroRequest)="getHeroChoice(0)" [showButton]="true"></app-superhero>
 
-    <app-superhero [ngClass]="['herobg']" [myHero]="myHero2" (HeroRequest)="getHeroChoice(1)" [showButton]="true"></app-superhero>
+        <app-superhero [ngClass]="['herobg']" [myHero]="myHero2" (HeroRequest)="getHeroChoice(1)" [showButton]="true"></app-superhero>
+    </div>
 </div>

@@ -1,16 +1,16 @@
-<mat-card class="hero-card" class="center">
+<mat-card class="hero-card">
     <mat-card-header>
-        <mat-card-title>{{myHero.name}}</mat-card-title>
+        <mat-card-title>{{myHero.name}} | {{myHero.biography['full-name']}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image style="width: 300px; padding: 10px;" src={{myHero.image.url}} (error)="myHero.image.url='./assets/default.jpg'" alt="superhero" [title]="myHero.name">
+    <img mat-card-image style="width: 300px; padding: 10px; height:390px" src={{myHero.image.url}} (error)="myHero.image.url='./assets/default.jpg'" alt="superhero" [title]="myHero.name">
     <mat-card-content>
-        <p>real name : {{myHero.biography['full-name']}}</p>
-        <p>height : {{myHero.appearance.height[1]}}</p>
-        <p>weight : {{myHero.appearance.weight[1]}}</p>
+        <p>{{myHero.appearance.height[1]}} & {{myHero.appearance.weight[1]}}</p>
+        <p>work : {{ myHero.work.occupation | slice:0:50 }}...</p>
+        <p>affilation : {{ myHero.connections['group-affiliation'] | slice:0:50 }}...</p>
         <p *ngIf="!env.production">powerstat : {{ myjson.stringify(myHero.powerstats,null,4)}}</p>
     </mat-card-content>
 
     <mat-card-actions *ngIf="showButton">
-        <button mat-raised-button color="accent" (click)="talkBack(myHero.name)">{{myHero.name}}</button>
+        <button mat-raised-button color="accent" (click)="talkBack()">{{myHero.name}}</button>
     </mat-card-actions>
 </mat-card>
