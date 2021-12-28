@@ -1,5 +1,5 @@
 <mat-spinner diameter="200" mode="indeterminate" color="accent" [hidden]="hideMe"></mat-spinner>
 <div [hidden]="!hideMe" id="random">
     <app-superhero [ngClass]="['herobg']" [myHero]="myHeroRand" [showButton]="false"></app-superhero>
-    <button (click)='reload()' class="btn btn-secondary">Change hero</button>
+    <button id="reload" (click)='reload()' class="btn btn-secondary">Another one</button>
 </div>

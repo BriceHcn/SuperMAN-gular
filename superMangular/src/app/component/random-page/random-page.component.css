@@ -1,7 +1,17 @@
 #random {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 mat-spinner {
     margin: 0 auto;
+}
+
+#reload {
+    margin: 10px 0 10px 0;
+    width: 26.2em;
+    ;
 }
