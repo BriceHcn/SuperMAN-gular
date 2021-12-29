@@ -14,7 +14,11 @@ export class GameService {
   constructor(private DataService:DataService) { }
 
   setCharacToComp(){
-    this.comp=this.DataService.getRandomArbitrary(1,6);
+    var temp=this.DataService.getRandomArbitrary(1,6);
+    while(temp===this.comp){
+      temp=this.DataService.getRandomArbitrary(1,6);
+    }
+    this.comp=temp;
   }
 
   updateQuestion():string{
