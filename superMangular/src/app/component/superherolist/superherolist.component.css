@@ -28,3 +28,16 @@ mat-spinner {
     font-size: 300%;
     font-family: sans-serif;
 }
+
+#regle {
+    background-color: rgba(0, 0, 0, 0.842);
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 10px;
+}
+
+#regle_texte {
+    color: #73AD21;
+    font: small-caps bold 24px/1 sans-serif;
+    padding: 10px 0px 10px 0px;
+}

@@ -21,11 +21,13 @@ export class SuperherolistComponent implements OnInit {
 
   score:number=0;
   question!:string;
+  firstLaunch!:boolean;
 
   constructor(private DataService:DataService,private GameService:GameService) { }
 
   ngOnInit(): void {
     this.hideMe=false;
+    this.firstLaunch=true;
 
     this.GameService.scoreObs.subscribe((value: number) => {
       this.score=value;
@@ -37,6 +39,8 @@ export class SuperherolistComponent implements OnInit {
 
   //fonction qui recupere le resultat de l'event emitter du bouton super hero
   getHeroChoice(evt:number){
+    //on enleve les regles du jeux
+    this.firstLaunch=false;
     if(evt==0){
       this.actionLeft();
     }
