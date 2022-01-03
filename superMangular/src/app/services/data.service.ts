@@ -4,6 +4,7 @@ import { catchError, delay, map, tap } from 'rxjs/operators';
 import { superhero } from '../data/superhero';
 import { environment } from '../../environments/environment'
 import { Observable, of } from 'rxjs';
+import { result } from '../data/result';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,8 @@ export class DataService {
       delay(environment.delay));
   }
 
-  getSuperheroSearched(search : string): Observable<Array<superhero>>{
-    return this.http.get<Array<superhero>>(this.baseUrl + "/search/" + search).pipe(
+  getSuperheroSearched(search : string): Observable<result>{
+    return this.http.get<result>(this.baseUrl + "/search/" + search).pipe(
     delay(environment.delay));
   }
 

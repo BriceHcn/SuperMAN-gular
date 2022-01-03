@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { superhero } from 'src/app/data/superhero';
 import { FormControl, FormGroup } from '@angular/forms';
+import { delay } from 'rxjs/operators';
+import { result } from 'src/app/data/result';
 
 @Component({
   selector: 'app-search-page',
@@ -12,7 +14,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SearchPageComponent implements OnInit {
 
   subscription!: Subscription;
-  HeroesSearched!: Array<superhero>;
+  HeroesSearched!: result;
   Input!: string;
 
   constructor(private DataService:DataService) { }
@@ -27,9 +29,9 @@ export class SearchPageComponent implements OnInit {
 
     this.subscription = this.DataService.getSuperheroSearched(this.Input).subscribe(
 
-      (data:Array<superhero>) => {
+      (data:result) => {
         this.HeroesSearched = data;
-        console.log(data);
+
       },
       (error) => {console.log("error");},
     );

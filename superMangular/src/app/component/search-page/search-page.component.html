@@ -1,17 +1,15 @@
 <div>
+    <input #hero placeholder="Votre héro : " />
+    <button (click)="callHero(hero.value)">Search</button> {{ Input }}
 
-  <input #hero placeholder="Votre héro : " />
-  <button (click)="callHero(hero.value)">Search</button>
-  {{ Input }}
+    <ng-container *ngIf="HeroesSearched && HeroesSearched.results.length > 0">
+        <div *ngFor="let Hero of HeroesSearched.results">
+            <app-superhero [myHero]="Hero" [showButton]="false"></app-superhero>
+        </div>
+    </ng-container>
 
-  <ng-container *ngIf="HeroesSearched && HeroesSearched.length > 0">
-    <div *ngFor="let Hero of HeroesSearched">
-      <app-superhero [myHero]="Hero" [showButton]="false"></app-superhero>
-    </div>
-  </ng-container>
-
-  <ng-container *ngIf="HeroesSearched && HeroesSearched.length <= 0">
-    Pas d'élément !
-  </ng-container>
+    <ng-container *ngIf="HeroesSearched && HeroesSearched.results.length <= 0">
+        Pas d'élément !
+    </ng-container>
 
 </div>
