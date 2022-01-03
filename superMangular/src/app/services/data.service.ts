@@ -23,8 +23,8 @@ export class DataService {
       delay(environment.delay));
   }
 
-  getSuperheroSearched(): Observable<Array<superhero>>{
-    return this.http.get<Array<superhero>>(this.baseUrl + "/search/batman").pipe(
+  getSuperheroSearched(search : string): Observable<Array<superhero>>{
+    return this.http.get<Array<superhero>>(this.baseUrl + "/search/" + search).pipe(
     delay(environment.delay));
   }
 

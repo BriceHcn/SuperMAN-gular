@@ -17,6 +17,10 @@ import { SuperherolistComponent } from './component/superherolist/superherolist.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPageComponent } from './component/search-page/search-page.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,11 +34,14 @@ import { SearchPageComponent } from './component/search-page/search-page.compone
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatInputModule,
     MatButtonModule
   ],
   providers: [
