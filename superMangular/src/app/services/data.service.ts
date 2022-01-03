@@ -14,12 +14,18 @@ export class DataService {
   myHero1!:Observable<superhero>;
   myHero2!:Observable<superhero>;
 
+
   constructor( private http: HttpClient) { }
 
 
   getSuperhero(): Observable<superhero> {
     return this.http.get<superhero>(this.baseUrl + this.getRandomArbitrary(1,731).toString()).pipe(
       delay(environment.delay));
+  }
+
+  getSuperheroSearched(): Observable<Array<superhero>>{
+    return this.http.get<Array<superhero>>(this.baseUrl + "/search/batman").pipe(
+    delay(environment.delay));
   }
 
   getRandomArbitrary(min:number, max:number) {

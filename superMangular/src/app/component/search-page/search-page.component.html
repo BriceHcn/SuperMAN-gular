@@ -1,1 +1,15 @@
-<p>search-page works!</p>
+<div>
+
+  <p>test</p>
+
+  <ng-container *ngIf="HeroesSearched && HeroesSearched.length > 0">
+    <div *ngFor="let Hero of HeroesSearched">
+      <app-superhero [myHero]="Hero"></app-superhero>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="HeroesSearched && HeroesSearched.length <= 0">
+    Pas d'élément !
+  </ng-container>
+
+</div>
