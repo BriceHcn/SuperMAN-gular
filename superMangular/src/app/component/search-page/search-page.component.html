@@ -1,6 +1,6 @@
 <div>
     <input #hero placeholder="Votre héro : " />
-    <button (click)="callHero(hero.value)">Search</button> {{ Input }}
+    <button (click)="callHero(hero.value)">Search</button>
 
     <ng-container *ngIf="HeroesSearched && HeroesSearched.results.length > 0">
         <div *ngFor="let Hero of HeroesSearched.results">
