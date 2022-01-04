@@ -4,6 +4,7 @@
   border: 2px solid #73AD21;
   padding: 10px;
   width: 80%;
+  margin-bottom: 30px;
 }
 
 .label {
@@ -24,3 +25,4 @@ form {
   display: flex;
   justify-content: center;
 }
+
