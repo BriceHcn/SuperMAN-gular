@@ -1,19 +1,19 @@
 .box {
-  background-color: rgba(0, 0, 0, 0.842);
   border-radius: 25px;
-  border: 2px solid #73AD21;
+  border: 2px solid #0478f1;
   padding: 10px;
   width: 80%;
   margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .label {
-  color: #73AD21;
+  color: #0478f1;
   padding: 10px 0px 10px 0px;
 }
 
 .input {
-  color: #73AD21;
+  color: #e91d25;
 }
 
 .suphero {
@@ -29,9 +29,8 @@ form {
 p {
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.842);
   border-radius: 25px;
-  border: 2px solid #73AD21;
-  color: #73AD21;
+  border: 2px solid #0478f1;
+  color: #0478f1;
 }
 
