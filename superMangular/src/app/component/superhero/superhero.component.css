@@ -3,4 +3,9 @@
     margin: 0 auto;
     width: 30em;
     margin-bottom: 10px;
+    background-color: #0478f1;
+}
+
+button {
+  background-color: #e91d25;
 }

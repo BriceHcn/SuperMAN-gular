@@ -22,22 +22,22 @@ mat-spinner {
 }
 
 #score {
-    margin-top: 10px;
-    color: rgb(206, 206, 0);
+    margin-top: 20px;
+    color: #e91d25;
     font-weight: bold;
     font-size: 300%;
     font-family: sans-serif;
 }
 
 #regle {
-    background-color: rgba(0, 0, 0, 0.842);
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    border: 2px solid #0478f1;
     padding: 10px;
+    margin-top: 10px;
 }
 
 #regle_texte {
-    color: #73AD21;
+    color: #0478f1;
     font: small-caps bold 24px/1 sans-serif;
     padding: 10px 0px 10px 0px;
 }
