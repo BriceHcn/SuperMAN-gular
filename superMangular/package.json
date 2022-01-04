@@ -8,7 +8,7 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "heroku-postbuild": "ng build",
-        "postinstall": "rm -rf node_modules"
+        "postinstall": "ng build"
     },
     "engines": {
         "node": "14.18.1",
