@@ -58,7 +58,7 @@ export class GameService {
           ++this.score;
           this.scoreObs.next(this.score);
         }else{
-          //--this.score;
+          this.score=0;
           this.scoreObs.next(this.score);
         }
       }
@@ -75,7 +75,7 @@ export class GameService {
           ++this.score;
           this.scoreObs.next(this.score);
         }else{
-          //--this.score;
+          this.score=0;
           this.scoreObs.next(this.score);
         }
       }
@@ -92,7 +92,7 @@ export class GameService {
           ++this.score;
           this.scoreObs.next(this.score);
         }else{
-          //--this.score;
+          this.score=0;
           this.scoreObs.next(this.score);
         }
       }
@@ -109,7 +109,7 @@ export class GameService {
           ++this.score;
           this.scoreObs.next(this.score);
         }else{
-          //--this.score;
+          this.score=0;
           this.scoreObs.next(this.score);
         }
       }
@@ -126,7 +126,7 @@ export class GameService {
           ++this.score;
           this.scoreObs.next(this.score);
         }else{
-          //--this.score;
+          this.score=0;
           this.scoreObs.next(this.score);
         }
       }
@@ -143,7 +143,7 @@ export class GameService {
           ++this.score;
           this.scoreObs.next(this.score);
         }else{
-          //--this.score;
+          this.score=0;
           this.scoreObs.next(this.score);
         }
       }
