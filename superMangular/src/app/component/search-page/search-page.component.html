@@ -1,10 +1,15 @@
 <div>
-    <input #hero placeholder="Votre héro : " />
-    <button (click)="callHero(hero.value)">Search</button>
+
+  <form [formGroup]="searchForm">
+      <mat-form-field class="box">
+          <mat-label class="label">Entrer le texte à rechercher:</mat-label>
+          <input matInput formControlName="search" class="input">
+      </mat-form-field>
+  </form>
 
     <ng-container *ngIf="HeroesSearched && HeroesSearched.results.length > 0">
         <div *ngFor="let Hero of HeroesSearched.results">
-            <app-superhero [myHero]="Hero" [showButton]="false"></app-superhero>
+            <app-superhero [myHero]="Hero" [showButton]="false" class="suphero"></app-superhero>
         </div>
     </ng-container>
 

@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { superhero } from 'src/app/data/superhero';
 import { FormControl, FormGroup } from '@angular/forms';
-import { delay } from 'rxjs/operators';
+import { debounceTime, delay, mergeMap } from 'rxjs/operators';
 import { result } from 'src/app/data/result';
 
 @Component({
@@ -17,24 +17,27 @@ export class SearchPageComponent implements OnInit {
   HeroesSearched!: result;
   Input!: string;
 
+  searchForm!: FormGroup;
+  searchControl!: FormControl;
+
   constructor(private DataService:DataService) { }
 
   ngOnInit(): void {
 
-  }
+    this.searchControl = new FormControl('');
+    this.searchForm = new FormGroup({
+        search: this.searchControl
+    });
 
-  callHero(input : string): void {
-
-    this.Input = input;
-
-    this.subscription = this.DataService.getSuperheroSearched(this.Input).subscribe(
-
-      (data:result) => {
-        this.HeroesSearched = data;
-
-      },
-      (error) => {console.log("error");},
-    );
+    this.searchControl.valueChanges.pipe(
+      debounceTime(1000),
+      mergeMap(data => this.DataService.getSuperheroSearched(data))
+  ).subscribe(
+    (data:result) => {
+      this.HeroesSearched = data;
+    },
+    (error) => {console.log("error");},
+  )
 
   }
 

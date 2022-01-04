@@ -1,4 +1,26 @@
-.bgGeneral {
+.box {
+  background-color: rgba(0, 0, 0, 0.842);
+  border-radius: 25px;
+  border: 2px solid #73AD21;
   padding: 10px;
-  background-color: lightblue;
+  width: 80%;
+}
+
+.label {
+  color: #73AD21;
+  padding: 10px 0px 10px 0px;
+}
+
+.input {
+  color: #73AD21;
+}
+
+.suphero {
+  margin-bottom: 10px;
+}
+
+
+form {
+  display: flex;
+  justify-content: center;
 }
