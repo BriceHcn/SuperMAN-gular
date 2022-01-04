@@ -8,7 +8,7 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "heroku-postinstall": "ng build",
-        "heroku-postbuild": "ng build"
+        "heroku-postbuild": "ng serve"
     },
     "private": true,
     "dependencies": {
