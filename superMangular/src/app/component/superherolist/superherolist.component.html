@@ -1,9 +1,11 @@
 <div class="heros-container">
     <div id="regle" *ngIf="firstLaunch">
-        <p id="regle_texte">À chaque tour un question t'es posée, il te faut juste choisir le super heros qui correspond le mieux !</p>
+        <p id="regle_texte">À chaque tour un question t'es posée, il te faut juste choisir le super héros qui correspond le mieux !</p>
     </div>
-    <p id="score">{{score}} points </p>
 
+
+    <p id="score" *ngIf="score == 0">{{score}} point </p>
+    <p id="score" *ngIf="score > 0">{{score}} points </p>
     <br>
     <mat-spinner diameter="150" color="accent" mode="indeterminate" [hidden]="hideMe"></mat-spinner>
 
