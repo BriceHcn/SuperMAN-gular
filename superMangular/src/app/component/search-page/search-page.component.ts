@@ -5,6 +5,7 @@ import { superhero } from 'src/app/data/superhero';
 import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, delay, mergeMap } from 'rxjs/operators';
 import { result } from 'src/app/data/result';
+import { isNull } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-search-page',
@@ -15,7 +16,9 @@ export class SearchPageComponent implements OnInit {
 
   subscription!: Subscription;
   HeroesSearched!: result;
-  Input!: string;
+  Result!: string;
+  hideMe!: boolean;
+  hideExHeroes!: boolean;
 
   searchForm!: FormGroup;
   searchControl!: FormControl;
@@ -23,6 +26,8 @@ export class SearchPageComponent implements OnInit {
   constructor(private DataService:DataService) { }
 
   ngOnInit(): void {
+
+    this.hideMe = true;
 
     this.searchControl = new FormControl('');
     this.searchForm = new FormGroup({
@@ -34,7 +39,15 @@ export class SearchPageComponent implements OnInit {
       mergeMap(data => this.DataService.getSuperheroSearched(data))
   ).subscribe(
     (data:result) => {
-      this.HeroesSearched = data;
+      this.Result = "No result";
+      this.hideMe = false;
+      this.hideExHeroes = true;
+      if(data.response == 'success'){
+        this.HeroesSearched = data;
+        this.Result = "";
+        this.hideMe = true;
+        this.hideExHeroes = false;
+      }
     },
     (error) => {console.log("error");},
   )
