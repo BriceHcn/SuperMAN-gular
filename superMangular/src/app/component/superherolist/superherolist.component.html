@@ -4,8 +4,8 @@
     </div>
 
 
-    <p id="score" *ngIf="score == 0">{{score}} point </p>
-    <p id="score" *ngIf="score > 0">{{score}} points </p>
+    <p id="score" *ngIf="score <= 1">{{score}} point </p>
+    <p id="score" *ngIf="score > 1">{{score}} points </p>
     <br>
     <mat-spinner diameter="150" color="accent" mode="indeterminate" [hidden]="hideMe"></mat-spinner>
 
