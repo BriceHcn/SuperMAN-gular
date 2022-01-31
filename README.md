@@ -1,4 +1,4 @@
-Supermangular
+Supermangular :
 
 Angular website made with superhero api
 
@@ -9,3 +9,5 @@ It's a game you can play :
 -search all super hero.
 
 available at : https://supermangular.herokuapp.com/
+
+
